@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    color: #555;
+}
+
+/* Styling untuk rumus matematika */
+.mathjax {
+    font-size: 20px;             /* Ukuran font untuk rumus */
+    color: #333;                 /* Warna teks rumus */
+    margin-top: 20px;            /* Jarak atas */
+    padding: 10px;               /* Padding untuk memberi ruang di sekitar rumus */
+    border-left: 5px solid #4CAF50; /* Garis border kiri berwarna hijau */
+    background-color: #f9f9f9;   /* Latar belakang rumus */
+    font-family: "Courier New", Courier, monospace; /* Font monospace agar tampak teknis */
+}
+
+/* Styling untuk paragraf rumus */
+.mathjax p {
+    margin: 10px 0;             /* Margin atas dan bawah pada paragraf rumus */
+    font-size: 22px;            /* Ukuran font yang lebih besar untuk rumus */
+    text-align: center;         /* Teks rumus diratakan ke tengah */
+    font-weight: bold;          /* Tebalkan font rumus */
+    color: #333;                /* Warna teks */
+}

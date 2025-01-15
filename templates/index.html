@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Keberhasilan Pengiriman Paket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Link MathJax untuk menampilkan rumus matematika -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediksi Keberhasilan Pengiriman Paket</h1>
+
+        <!-- Form Input untuk Pengguna -->
+        <form method="POST">
+            <label for="n">Jumlah Paket yang Dikirim:</label>
+            <input type="number" name="n" id="n" required min="1" value="{{ n }}">
+
+            <label for="k">Jumlah Paket yang Terkirim Tepat Waktu:</label>
+            <input type="number" name="k" id="k" required min="0" value="{{ k }}">
+
+            <label for="p">Probabilitas Pengiriman Tepat Waktu (misalnya 0.8):</label>
+            <input type="number" step="0.01" name="p" id="p" required min="0" max="1" value="{{ p }}">
+
+            <button type="submit">Hitung Probabilitas</button>
+        </form>
+
+        {% if probability is not none %}
+            <h2>Hasil Perhitungan:</h2>
+            <p><strong>Jumlah Paket yang Dikirim:</strong> {{ n }}</p>
+            <p><strong>Jumlah Paket yang Terkirim Tepat Waktu:</strong> {{ k }}</p>
+            <p><strong>Probabilitas Pengiriman Tepat Waktu:</strong> {{ p }}</p>
+
+            <!-- Menampilkan Rumus yang Digunakan -->
+            <p><strong>Rumus Distribusi Binomial:</strong></p>
+            <p class="mathjax">
+                \( P(X = k) = C(n, k) \cdot p^k \cdot (1 - p)^{n - k} \)
+            </p>
+
+            <!-- Menampilkan Rumus yang Digunakan -->
+            <p><strong>Rumus yang Digunakan:</strong></p>
+            <p>{{ formula }}</p>
+
+            <!-- Menampilkan Hasil Probabilitas -->
+            <p><strong>Probabilitas Keberhasilan:</strong> {{ probability }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
